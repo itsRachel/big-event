@@ -29,3 +29,6 @@ iframe {
 .layui-body {
     overflow: hidden;
 }
+.username {
+    display: inline-block;
+}
