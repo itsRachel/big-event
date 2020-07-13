@@ -44,9 +44,33 @@ form.verify({
     same: function(val) {
         // 这个验证规则，重复密码使用，所以这个val就表示重复密码
         // 获取密码
-        var pwd = $('input[name=password]').val();
+        var pwd = $('#register input[name=password]').val();
         if(pwd !== val) {
             return '两次密码不一致'
         }
     }
 });
+
+// ---------------------------  登录功能 ------------------------------
+// 监听表单的提交事件 -> 阻止表单默认行为 -> 收集表单数据 -> ajax提交给接口
+$('#login form').on('submit', function(e) {
+    e.preventDefault();
+    // 检查input的name属性值，是否与接口要求的请求参数一致，必须一致才行
+    var data = $(this).serialize();
+    $.ajax({
+        type: 'POST',
+        url: 'http://www.liulongbin.top:3007/api/login',
+        data: data,
+        success: function(res) {
+            // 无乱登录成功还是失败，都给出提示
+            layer.msg(res.message);
+            if(res.status === 0) {
+                // 把token保存到本地存储中
+                localStorage.setItem('token', res.token);
+                // 登录成功，跳转到首页
+                // location.href = '/index.html'; // 表示跳转到根目录中的index.html
+            }
+        }
+    })
+})
+
