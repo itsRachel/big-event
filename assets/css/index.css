@@ -1,0 +1,31 @@
+.layui-icon {
+    margin: 6px 7px 0 0;
+    font-size: 16px;
+}
+.layui-side-scroll .layui-nav-child dd {
+    padding-left: 10px;
+}
+#user {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+.text-avatar {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-color: #419488;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    /* 字体头像,先隐藏 */
+    display: none;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+}
+/* 去掉iframe的滚动条 */
+.layui-body {
+    overflow: hidden;
+}

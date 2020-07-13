@@ -68,7 +68,7 @@ $('#login form').on('submit', function(e) {
                 // 把token保存到本地存储中
                 localStorage.setItem('token', res.token);
                 // 登录成功，跳转到首页
-                // location.href = '/index.html'; // 表示跳转到根目录中的index.html
+                location.href = '/index.html'; // 表示跳转到根目录中的index.html
             }
         }
     })
